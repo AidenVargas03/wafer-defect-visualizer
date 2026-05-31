@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "7bMY0veNnZXfeTB7+Pf+MBCthLyPwzhWODzJKSNoUjo=",
+  "Source": "WaferApi",
+  "BasePath": "_content/WaferApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
