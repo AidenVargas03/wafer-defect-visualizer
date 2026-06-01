@@ -6,6 +6,7 @@ import FilterBar from "./FilterBar";
 import DefectChart from "./DefectChart";
 import SpcChart from "./SpcChart";
 import WaferSelector from "./WaferSelector";
+import API_BASE from "./config";
 
 export default function App() {
   const [dragging, setDragging] = useState(false);
