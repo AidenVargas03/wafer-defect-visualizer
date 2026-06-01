@@ -189,7 +189,7 @@ export default function App() {
             cursor: "pointer",
           }}
         >
-          â–¶ Load demo wafer
+        Load demo wafer
         </button>
       </div>
 
@@ -210,12 +210,12 @@ export default function App() {
         }}
         onClick={() => document.getElementById("file-input").click()}
       >
-        <div style={{ fontSize: 28, marginBottom: 6 }}>ðŸ“‚</div>
+        <div style={{ fontSize: 28, marginBottom: 6 }}></div>
         <p style={{ margin: 0, fontSize: 13, color: "#555" }}>
-          Drag & drop a CSV file here, or click to browse
+        Drag & drop a CSV file here, or click to browse
         </p>
         <p style={{ margin: "4px 0 0", fontSize: 11, color: "#aaa" }}>
-          Upload multiple wafers to compare them
+        Upload multiple wafers to compare them
         </p>
         <input id="file-input" type="file" accept=".csv" style={{ display: "none" }} onChange={onFileInput} />
       </div>
@@ -296,7 +296,7 @@ export default function App() {
                       marginBottom: 8,
                     }}
                   >
-                    â¬‡ Export PNG
+                  Export PNG
                   </button>
                 </div>
                 <FilterBar
@@ -312,7 +312,7 @@ export default function App() {
                 <div>
                   {compareMode && compareWafer && (
                     <p style={{ fontSize: 12, fontWeight: 500, color: "#378ADD", marginBottom: 6 }}>
-                      {result.waferId} â€” {result.yieldPct}% yield
+                      {result.waferId}  {result.yieldPct}% yield
                     </p>
                   )}
                  <div ref={mapRef} style={{ border: "0.5px solid #e0e0e0", borderRadius: 12, padding: 12, background: "#fafafa" }}>
@@ -324,7 +324,7 @@ export default function App() {
                 {compareMode && compareWafer && (
                   <div>
                     <p style={{ fontSize: 12, fontWeight: 500, color: "#1D9E75", marginBottom: 6 }}>
-                      {compareWafer.result.waferId} â€” {compareWafer.result.yieldPct}% yield
+                      {compareWafer.result.waferId} {compareWafer.result.yieldPct}% yield
                     </p>
                     <div style={{ border: "0.5px solid #e0e0e0", borderRadius: 12, padding: 12, background: "#fafafa" }}>
                       <WaferMap dies={compareWafer.result.dies} activeTypes={activeTypes} clusters={compareWafer.result.clusters} />
@@ -391,3 +391,5 @@ export default function App() {
     </div>
   );
 }
+
+
