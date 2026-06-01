@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+﻿import { useState, useRef } from "react";
 import { toPng } from "html-to-image";
 import WaferMap from "./WaferMap";
 import Legend from "./Legend";
@@ -37,7 +37,7 @@ export default function App() {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://localhost:5130/api/upload", {
+      const res = await fetch(`${API_BASE}/api/upload`, {
         method: "POST",
         body: formData,
       });
@@ -47,7 +47,7 @@ export default function App() {
 
       const formData2 = new FormData();
       formData2.append("file", file);
-      const analyticsRes = await fetch("http://localhost:5130/api/analyze", {
+      const analyticsRes = await fetch(`${API_BASE}/api/analyze`, {
         method: "POST",
         body: formData2,
       });
@@ -139,7 +139,7 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("http://localhost:5130/api/demo");
+      const res = await fetch(`${API_BASE}/api/demo`);
       if (!res.ok) throw new Error("Demo load failed");
       const { upload, analytics: analyticsData } = await res.json();
 
@@ -188,7 +188,7 @@ export default function App() {
             cursor: "pointer",
           }}
         >
-          ▶ Load demo wafer
+          â–¶ Load demo wafer
         </button>
       </div>
 
@@ -209,7 +209,7 @@ export default function App() {
         }}
         onClick={() => document.getElementById("file-input").click()}
       >
-        <div style={{ fontSize: 28, marginBottom: 6 }}>📂</div>
+        <div style={{ fontSize: 28, marginBottom: 6 }}>ðŸ“‚</div>
         <p style={{ margin: 0, fontSize: 13, color: "#555" }}>
           Drag & drop a CSV file here, or click to browse
         </p>
@@ -295,7 +295,7 @@ export default function App() {
                       marginBottom: 8,
                     }}
                   >
-                    ⬇ Export PNG
+                    â¬‡ Export PNG
                   </button>
                 </div>
                 <FilterBar
@@ -311,7 +311,7 @@ export default function App() {
                 <div>
                   {compareMode && compareWafer && (
                     <p style={{ fontSize: 12, fontWeight: 500, color: "#378ADD", marginBottom: 6 }}>
-                      {result.waferId} — {result.yieldPct}% yield
+                      {result.waferId} â€” {result.yieldPct}% yield
                     </p>
                   )}
                  <div ref={mapRef} style={{ border: "0.5px solid #e0e0e0", borderRadius: 12, padding: 12, background: "#fafafa" }}>
@@ -323,7 +323,7 @@ export default function App() {
                 {compareMode && compareWafer && (
                   <div>
                     <p style={{ fontSize: 12, fontWeight: 500, color: "#1D9E75", marginBottom: 6 }}>
-                      {compareWafer.result.waferId} — {compareWafer.result.yieldPct}% yield
+                      {compareWafer.result.waferId} â€” {compareWafer.result.yieldPct}% yield
                     </p>
                     <div style={{ border: "0.5px solid #e0e0e0", borderRadius: 12, padding: 12, background: "#fafafa" }}>
                       <WaferMap dies={compareWafer.result.dies} activeTypes={activeTypes} clusters={compareWafer.result.clusters} />
